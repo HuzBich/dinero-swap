@@ -1,0 +1,153 @@
+@import "~bootstrap/scss/bootstrap";
+@import "./Variables";
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: local('SF Pro Display'),
+  url('../static/fonts/SFPRODISPLAYREGULAR.OTF') format('otf');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: local('SF Pro Display'),
+  url('../static/fonts/SFPRODISPLAYBOLD.OTF') format('otf');
+  font-weight: bold;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "SF Pro Display", sans-serif;
+}
+
+
+.header {
+  margin: 0;
+  height: 96px;
+  background-color: $secondary-color;
+}
+
+.logo {
+  height: 64px;
+  margin: 16px 24px;
+}
+
+.exchange-rate {
+  height: 100%;
+  //width: 620px;
+  //display: inline-block;
+  .currency {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+    background-color: white;
+    display: inline-block;
+    height: 64px;
+    width: 180px;
+    margin: 16px 20px;
+    border-radius: 32px;
+    .currency-symbol {
+      display: inline-block;
+      background-color: #575757;
+      font-weight: bold;
+      height: 50px;
+      width: 50px;
+      border-radius: 25px;
+      margin: 7px;
+      text-align: center;
+      vertical-align: middle;
+      color: #F5F5F5;
+      line-height: 50px;
+    }
+    .currency-rate {
+      display: inline-block;
+      text-align: center;
+      vertical-align: middle;
+      width: 100px;
+    }
+  }
+}
+
+.content {
+  background: #78CDD7 url("../static/images/background.png") no-repeat 105% 50%;
+  background-size: 400px;
+  .container {
+    width: 1180px;
+    .currency-chart {
+      box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.4);
+      height: 500px;
+      background-color: white;
+      margin-top: 90px;
+      margin-bottom: 90px;
+      border-radius: 60px;
+    }
+    .currency-swap {
+      box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+      height: 500px;
+      background-color: white;
+      margin-top: 90px;
+      margin-bottom: 90px;
+      border-radius: 60px;
+      .head {
+        text-align: center;
+        height: 100px;
+        border-bottom: solid black 2px;
+        padding: 12px 0;
+        h2 {
+          font-family: "SF Pro Display", sans-serif;
+          font-weight: bold;
+          font-size: 24px;
+          margin-top: 8px;
+        }
+      }
+      .form {
+        margin: 20px 40px;
+        padding-top: 10px;
+        * {
+          display: block;
+        }
+        select {
+          border: 0;
+          margin-top: 0;
+          margin-left: 15px;
+        }
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+        }
+        .currency-input {
+          margin-top: 10px;
+          padding-left: 20px;
+          padding-right: 20px;
+          width: 100%;
+          height: 70px;
+          border-radius: 20px;
+          border: 0;
+          box-shadow: 0 0 10px rgba(0, 0, 0, .15) inset;
+          background-color: #E8E8E8;
+        }
+        .currency-switch {
+          height: 45px;
+          margin-top: 15px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .trade-button {
+          width: 100%;
+          border: 0;
+          border-radius: 20px;
+          margin-top: 20px;
+          background-color: $secondary-color;
+          height: 50px;
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  height: 96px;
+  margin: 0;
+  background-color: $secondary-color;
+}
