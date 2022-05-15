@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
-import getCurrencyInfo from "../services/exchanger-service";
+import getCurrencyInfo from "../API/exchangerService";
 
 const CurrencyRate = ({currency, ...props}) => {
-    const [currencyRate, setCurrencyRate] = useState(0)
+    const [currencyRate, setCurrencyRate] = useState(1)
     useEffect(() => {
         (async function () {
             const currencyInfo = await getCurrencyInfo(currency);

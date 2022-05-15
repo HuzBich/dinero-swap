@@ -1,7 +1,24 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import TradingViewWidget, {Themes} from "react-tradingview-widget";
+import Loader from "./UI/Loader/Loader";
 
 const CurrencyChart = (props) => {
+    const [isLoading, setIsLoading] = useState(true);
+    useEffect(() => {
+        setIsLoading(true);
+        const chartBody = document.getElementsByClassName('chart-body')[0]
+        const searchIframe = setInterval(() => {
+            try {
+                chartBody.getElementsByTagName('iframe')[0].onload = () => {
+                    setTimeout(() => {
+                        setIsLoading(false);
+                    }, 700)
+                }
+                clearInterval(searchIframe);
+            } catch (e) { console.log(e)}
+        }, 100)
+
+    }, [props])
     return (
         <div className="currency-chart">
             <div className="chart-title">
@@ -9,7 +26,7 @@ const CurrencyChart = (props) => {
                 <p className="rate">{props.rate}</p>
                 <p className="date">{(new Date()).toUTCString()}</p>
             </div>
-            <div className="chart-body">
+            <div hidden={isLoading} className="chart-body">
                 <TradingViewWidget
                     symbol={props.from+props.to}
                     theme={Themes.LIGHT}
@@ -21,6 +38,16 @@ const CurrencyChart = (props) => {
                     style="3"
                 />
             </div>
+            {
+                isLoading
+                ?
+                <div className="loader">
+                    <Loader/>
+                </div>
+                :
+                <></>
+            }
+
         </div>
     );
 };

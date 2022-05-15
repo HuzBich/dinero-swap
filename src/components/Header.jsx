@@ -15,7 +15,7 @@ const Header = (props) => {
             {
                 props.currencies.map((currency, index) => {
                     if (currency !== 'UAH')
-                        return (<CurrencyRate currency={currency} id={index}/>)
+                        return (<CurrencyRate currency={currency} key={index}/>)
                 })
             }
             </Col>
