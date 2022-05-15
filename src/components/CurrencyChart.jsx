@@ -15,7 +15,7 @@ const CurrencyChart = (props) => {
                     }, 700)
                 }
                 clearInterval(searchIframe);
-            } catch (e) { console.log(e)}
+            } catch (e) {}
         }, 100)
 
     }, [props])
