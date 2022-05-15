@@ -5,10 +5,11 @@ import Content from "./components/Content";
 import Footer from "./components/Footer";
 
 function App() {
+    const currencies = ['USD', 'EUR', 'UAH', 'PLN'];
   return (
     <div className="App">
-        <Header/>
-        <Content currencies={['USD', 'EUR', 'UAH', 'PLN']}/>
+        <Header currencies={currencies}/>
+        <Content currencies={currencies}/>
         <Footer/>
     </div>
   );

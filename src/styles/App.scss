@@ -79,7 +79,27 @@
       background-color: white;
       margin-top: 90px;
       margin-bottom: 90px;
+      padding: 40px 50px 50px;
       border-radius: 60px;
+      .chart-title {
+        height: 100px;
+        h2 {
+          font-weight: bold;
+          font-size: 24px;
+        }
+        .rate {
+          margin-top: 8px;
+          margin-bottom: 0;
+          font-size: 18px;
+        }
+        .date {
+          color: #575757;
+          font-size: 14px;
+        }
+      }
+      .chart-body {
+        height: 310px;
+      }
     }
     .currency-swap {
       box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
@@ -98,6 +118,7 @@
           font-weight: bold;
           font-size: 24px;
           margin-top: 8px;
+          color: #464646;
         }
       }
       .form {
@@ -127,10 +148,14 @@
           background-color: #E8E8E8;
         }
         .currency-switch {
-          height: 45px;
+          height: 35px;
           margin-top: 15px;
           margin-left: auto;
           margin-right: auto;
+          &.active {
+            animation: swapRotation 500ms ease-in-out;
+          }
+
         }
         .trade-button {
           width: 100%;
@@ -146,8 +171,26 @@
   }
 }
 
+@keyframes swapRotation {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .footer {
-  height: 96px;
+  height: 160px;
   margin: 0;
   background-color: $secondary-color;
+  .contacts {
+    width: fit-content;
+    margin: 0 auto;
+    align-self: center;
+    img {
+      height: 120px;
+      margin: 0 40px;
+    }
+  }
 }
